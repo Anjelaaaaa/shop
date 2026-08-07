@@ -1,10 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../features/auth/useAuth';
+import { useCart } from "../features/cart/CartContext";
 
 export function Navbar() {
   const { isAuthenticated, getUser, logout } = useAuth();
   const user = getUser();
   const navigate = useNavigate();
+  const { count } = useCart();
 
   const handleLogout = () => {
     logout();
@@ -30,6 +32,9 @@ export function Navbar() {
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
         <Link to="/" style={{ textDecoration: 'none', color: '#555' }}>Каталог</Link>
         <Link to="/profile" style={{ textDecoration: 'none', color: '#555' }}>Профиль</Link>
+        <Link to="/cart" style={{ textDecoration: "none", color: "#555" }}>
+          Корзина {count > 0 && `(${count})`}
+        </Link>
         <span style={{ color: '#333' }}>👋 {user?.first_name || user?.email}</span>
         <button 
           onClick={handleLogout}
