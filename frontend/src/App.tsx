@@ -7,6 +7,9 @@ import { ProtectedRoute } from "./app/ProtectedRoute";
 import { Navbar } from "./components/Navbar";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import ManageProductsPage from "./pages/ManageProductsPage";
+import { ManagerRoute } from "./app/ManagerRoute";
+import ProductFormPage from "./pages/ProductFormPage";
 
 function App() {
   return (
@@ -48,6 +51,33 @@ function App() {
             <Navbar />
             <CartPage />
           </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/manage/products"
+        element={
+          <ManagerRoute>
+            <Navbar />
+            <ManageProductsPage />
+          </ManagerRoute>
+        }
+      />
+      <Route
+        path="/manage/products/new"
+        element={
+          <ManagerRoute>
+            <Navbar />
+            <ProductFormPage />
+          </ManagerRoute>
+        }
+      />
+      <Route
+        path="/manage/products/:id"
+        element={
+          <ManagerRoute>
+            <Navbar />
+            <ProductFormPage />
+          </ManagerRoute>
         }
       />
     </Routes>

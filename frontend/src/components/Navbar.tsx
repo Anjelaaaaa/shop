@@ -7,6 +7,7 @@ export function Navbar() {
   const user = getUser();
   const navigate = useNavigate();
   const { count } = useCart();
+  const isManager = user?.role === "MANAGER" || user?.role === "ADMIN";
 
   const handleLogout = () => {
     logout();
@@ -35,6 +36,11 @@ export function Navbar() {
         <Link to="/cart" style={{ textDecoration: "none", color: "#555" }}>
           Корзина {count > 0 && `(${count})`}
         </Link>
+        {isManager && (
+          <Link to="/manage/products" style={{ textDecoration: "none", color: "#555" }}>
+            Управление
+          </Link>
+        )}
         <span style={{ color: '#333' }}>👋 {user?.first_name || user?.email}</span>
         <button 
           onClick={handleLogout}
