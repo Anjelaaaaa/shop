@@ -23,13 +23,11 @@ export default function HomePage() {
   const [category, setCategory] = useState("");
   const [ordering, setOrdering] = useState("");
 
-  // список категорий для выпадающего фильтра
   const { data: categories } = useQuery<Category[]>({
     queryKey: ["categories"],
     queryFn: async () => (await api.get("/categories/")).data,
   });
 
-  // список товаров — перезапрашивается при смене поиска/категории/сортировки
   const { data, isLoading, isError } = useQuery<Product[]>({
     queryKey: ["products", search, category, ordering],
     queryFn: async () => {
@@ -46,7 +44,6 @@ export default function HomePage() {
     <div style={{ padding: 16 }}>
       <h1>Каталог</h1>
 
-      {/* Панель управления */}
       <div style={{ display: "flex", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
         <input
           placeholder="Поиск по названию…"
@@ -70,12 +67,10 @@ export default function HomePage() {
         </select>
       </div>
 
-      {/* Состояния загрузки/ошибки/пусто */}
       {isLoading && <p>Загрузка каталога…</p>}
       {isError && <p>Не удалось загрузить товары</p>}
       {data && data.length === 0 && <p>Товары не найдены</p>}
 
-      {/* Сетка карточек */}
       {data && data.length > 0 && (
         <div
           style={{

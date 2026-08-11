@@ -29,14 +29,14 @@ class OrderTests(APITestCase):
         resp = self._order(3)
         self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
         self.product.refresh_from_db()
-        self.assertEqual(self.product.stock, 7)  # 10 - 3
+        self.assertEqual(self.product.stock, 7)
 
     def test_cannot_order_more_than_stock(self):
         self.client.force_authenticate(self.user)
         resp = self._order(999)
         self.assertEqual(resp.status_code, status.HTTP_400_BAD_REQUEST)
         self.product.refresh_from_db()
-        self.assertEqual(self.product.stock, 10)  # остаток не тронут
+        self.assertEqual(self.product.stock, 10) 
 
     def test_cancel_returns_stock(self):
         self.client.force_authenticate(self.user)
@@ -45,11 +45,11 @@ class OrderTests(APITestCase):
         self.assertEqual(self.product.stock, 6)
         self.client.post(f"/api/orders/{order_id}/cancel/")
         self.product.refresh_from_db()
-        self.assertEqual(self.product.stock, 10)  # вернулся
+        self.assertEqual(self.product.stock, 10)
 
     def test_cannot_access_other_users_order(self):
         self.client.force_authenticate(self.user)
         order_id = self._order(1).data["id"]
-        self.client.force_authenticate(self.other)  # другой пользователь
+        self.client.force_authenticate(self.other) 
         resp = self.client.get(f"/api/orders/{order_id}/")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)

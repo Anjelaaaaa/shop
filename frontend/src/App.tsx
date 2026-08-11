@@ -13,6 +13,7 @@ import ProductFormPage from "./pages/ProductFormPage";
 import OrdersPage from "./pages/OrdersPage";
 import OrderDetailPage from "./pages/OrderDetailPage";
 import ManageOrdersPage from "./pages/ManageOrdersPage";
+import NotificationsPage from "./pages/NotificationsPage";
 
 function App() {
   return (
@@ -108,6 +109,15 @@ function App() {
             <Navbar />
             <ManageOrdersPage />
           </ManagerRoute>
+        }
+      />
+      <Route
+        path="/notifications"
+        element={
+          <ProtectedRoute>
+            <Navbar />
+            <NotificationsPage />
+          </ProtectedRoute>
         }
       />
     </Routes>

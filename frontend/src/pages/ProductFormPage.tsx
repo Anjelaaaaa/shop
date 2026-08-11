@@ -43,13 +43,11 @@ export default function ProductFormPage() {
     },
   });
 
-  // категории для выпадающего списка
   const { data: categories } = useQuery<Category[]>({
     queryKey: ["categories"],
     queryFn: async () => (await api.get("/categories/")).data,
   });
 
-  // в режиме редактирования — подгрузить товар и заполнить форму
   useEffect(() => {
     if (isEdit) {
       api.get(`/products/${id}/`).then((res) => {
@@ -77,7 +75,7 @@ export default function ProductFormPage() {
       qc.invalidateQueries({ queryKey: ["products"] });
       navigate("/manage/products");
     } catch (err: any) {
-      // показать ошибки валидации, пришедшие с backend
+
       const data = err.response?.data;
       if (data && typeof data === "object") {
         Object.entries(data).forEach(([field, msgs]) => {
