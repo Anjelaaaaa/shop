@@ -36,6 +36,14 @@ export function Navbar() {
         <Link to="/cart" style={{ textDecoration: "none", color: "#555" }}>
           Корзина {count > 0 && `(${count})`}
         </Link>
+        <Link to="/orders" style={{ textDecoration: "none", color: "#555" }}>
+          Мои заказы
+        </Link>
+        {isManager && (
+          <Link to="/manage/orders" style={{ textDecoration: "none", color: "#555" }}>
+            Заказы
+          </Link>
+        )}
         {isManager && (
           <Link to="/manage/products" style={{ textDecoration: "none", color: "#555" }}>
             Управление

@@ -10,6 +10,9 @@ import CartPage from "./pages/CartPage";
 import ManageProductsPage from "./pages/ManageProductsPage";
 import { ManagerRoute } from "./app/ManagerRoute";
 import ProductFormPage from "./pages/ProductFormPage";
+import OrdersPage from "./pages/OrdersPage";
+import OrderDetailPage from "./pages/OrderDetailPage";
+import ManageOrdersPage from "./pages/ManageOrdersPage";
 
 function App() {
   return (
@@ -77,6 +80,33 @@ function App() {
           <ManagerRoute>
             <Navbar />
             <ProductFormPage />
+          </ManagerRoute>
+        }
+      />
+      <Route
+        path="/orders"
+        element={
+          <ProtectedRoute>
+            <Navbar />
+            <OrdersPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/orders/:id"
+        element={
+          <ProtectedRoute>
+            <Navbar />
+            <OrderDetailPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/manage/orders"
+        element={
+          <ManagerRoute>
+            <Navbar />
+            <ManageOrdersPage />
           </ManagerRoute>
         }
       />
