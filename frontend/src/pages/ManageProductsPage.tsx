@@ -11,8 +11,6 @@ interface Product {
   category_name: string;
 }
 
-const cell: React.CSSProperties = { border: "1px solid #ddd", padding: 8, textAlign: "left" };
-
 export default function ManageProductsPage() {
   const qc = useQueryClient();
 
@@ -26,46 +24,60 @@ export default function ManageProductsPage() {
     onSuccess: () => qc.invalidateQueries({ queryKey: ["manage-products"] }),
   });
 
-  if (isLoading) return <p style={{ padding: 16 }}>Загрузка…</p>;
-  if (isError) return <p style={{ padding: 16 }}>Ошибка загрузки</p>;
+  if (isLoading) return <p className="state">Загрузка…</p>;
+  if (isError) return <p className="state">Ошибка загрузки</p>;
 
   return (
-    <div style={{ padding: 16 }}>
-      <h1>Управление товарами</h1>
-      <Link to="/manage/products/new">+ Создать товар</Link>
-      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 12 }}>
-        <thead>
-          <tr>
-            <th style={cell}>Название</th>
-            <th style={cell}>Категория</th>
-            <th style={cell}>Цена</th>
-            <th style={cell}>Остаток</th>
-            <th style={cell}>Опубликован</th>
-            <th style={cell}>Действия</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data?.map((p) => (
-            <tr key={p.id}>
-              <td style={cell}>{p.name}</td>
-              <td style={cell}>{p.category_name}</td>
-              <td style={cell}>{p.price} ₽</td>
-              <td style={cell}>{p.stock}</td>
-              <td style={cell}>{p.is_published ? "да" : "нет"}</td>
-              <td style={cell}>
-                <Link to={`/manage/products/${p.id}`}>Изменить</Link>{" "}
-                <button
-                  onClick={() => {
-                    if (confirm(`Удалить «${p.name}»?`)) del.mutate(p.id);
-                  }}
-                >
-                  Удалить
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="page">
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+        <h1 className="page-title">Управление товарами</h1>
+        <Link to="/manage/products/new" className="btn btn-primary btn-sm" style={{ textDecoration: "none" }}>
+          + Создать товар
+        </Link>
+      </div>
+
+      {!data || data.length === 0 ? (
+        <p className="state">Товаров пока нет</p>
+      ) : (
+      <div className="panel glass" style={{ padding: 8 }}>
+        <div className="table-wrap">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Название</th>
+                <th>Категория</th>
+                <th>Цена</th>
+                <th>Остаток</th>
+                <th>Опубликован</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data?.map((p) => (
+                <tr key={p.id}>
+                  <td>{p.name}</td>
+                  <td>{p.category_name}</td>
+                  <td>{p.price} ₽</td>
+                  <td>{p.stock}</td>
+                  <td>{p.is_published ? "да" : "нет"}</td>
+                  <td style={{ whiteSpace: "nowrap" }}>
+                    <Link to={`/manage/products/${p.id}`} className="btn btn-ghost btn-sm" style={{ textDecoration: "none", marginRight: 6 }}>Изменить</Link>
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => {
+                        if (confirm(`Удалить «${p.name}»?`)) del.mutate(p.id);
+                      }}
+                    >
+                      Удалить
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      )}
     </div>
   );
 }

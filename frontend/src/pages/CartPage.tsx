@@ -34,58 +34,47 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div style={{ padding: 16 }}>
-        <h1>Корзина</h1>
-        <p>
-          Корзина пуста. <Link to="/">Перейти в каталог</Link>
+      <div className="page">
+        <h1 className="page-title centered">Корзина</h1>
+        <p className="state">
+          Корзина пуста. <Link to="/" className="link-accent">Перейти в каталог</Link>
         </p>
       </div>
     );
   }
 
   return (
-    <div style={{ padding: 16, maxWidth: 700 }}>
-      <h1>Корзина</h1>
-      {items.map((i) => (
-        <div
-          key={i.id}
-          style={{
-            display: "flex",
-            gap: 12,
-            alignItems: "center",
-            borderBottom: "1px solid #eee",
-            padding: "8px 0",
-          }}
-        >
-          <div style={{ flex: 1 }}>
-            <b>{i.name}</b>
-            <div style={{ color: "#888" }}>
-              {i.price} ₽ × {i.quantity}
+    <div className="page">
+      <h1 className="page-title centered">Корзина</h1>
+      <div className="panel glass" style={{ maxWidth: 720 }}>
+        {items.map((i) => (
+          <div key={i.id} className="row-line">
+            <div className="grow">
+              <div className="row-title">{i.name}</div>
+              <div className="row-sub">{i.price} ₽ × {i.quantity}</div>
             </div>
+            <input
+              className="qty-input"
+              type="number"
+              min={1}
+              max={i.stock}
+              value={i.quantity}
+              onChange={(e) => updateQty(i.id, Number(e.target.value))}
+            />
+            <button className="btn btn-danger btn-sm" onClick={() => removeItem(i.id)}>Удалить</button>
           </div>
-          <input
-            type="number"
-            min={1}
-            max={i.stock}
-            value={i.quantity}
-            onChange={(e) => updateQty(i.id, Number(e.target.value))}
-            style={{ width: 60, padding: 4 }}
-          />
-          <button onClick={() => removeItem(i.id)}>Удалить</button>
+        ))}
+
+        <div className="total-line">Итого: {total} ₽</div>
+
+        {checkout.isError && <p className="form-err">{getErrorMessage(checkout.error)}</p>}
+
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          <button className="btn btn-primary" onClick={() => checkout.mutate()} disabled={checkout.isPending}>
+            {checkout.isPending ? "Оформление…" : "Оформить заказ"}
+          </button>
+          <button className="btn btn-ghost" onClick={clear}>Очистить корзину</button>
         </div>
-      ))}
-
-      <h2 style={{ marginTop: 16 }}>Итого: {total} ₽</h2>
-
-      {checkout.isError && (
-        <p style={{ color: "red" }}>{getErrorMessage(checkout.error)}</p>
-      )}
-
-      <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-        <button onClick={() => checkout.mutate()} disabled={checkout.isPending}>
-          {checkout.isPending ? "Оформление…" : "Оформить заказ"}
-        </button>
-        <button onClick={clear}>Очистить корзину</button>
       </div>
     </div>
   );

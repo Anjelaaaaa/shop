@@ -29,10 +29,12 @@ shop/
    ```bash
    docker compose up --build
    ```
-3. Загрузи демо-данные (товары и тестовые аккаунты):
+3. В **другом терминале** загрузи демо-данные
+   (товары и тестовые аккаунты):
    ```bash
    docker compose exec backend python manage.py seed_demo
    ```
+   Миграции применяются автоматически при старте backend-контейнера.
 
 После запуска доступно:
 - Frontend — http://localhost:5173/
@@ -44,9 +46,9 @@ shop/
 
 | Email | Пароль | Роль |
 |---|---|---|
-| admin@shop.com | demo12345 | ADMIN |
-| manager@shop.com | demo12345 | MANAGER |
-| buyer@shop.com | demo12345 | USER |
+| admin@shop.com | 12345 | ADMIN |
+| manager@shop.com | 12345 | MANAGER |
+| anjik14.01@gmail.com | 12345 | USER |
 
 ## Тесты
 

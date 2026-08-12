@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { useAuth } from '../features/auth/useAuth';
 import { useCart } from '../features/cart/CartContext';
@@ -31,59 +31,25 @@ export function Navbar() {
 
   if (!isAuthenticated()) return null;
 
-  const badge: React.CSSProperties = {
-    background: '#f44336',
-    color: 'white',
-    borderRadius: '10px',
-    padding: '1px 7px',
-    fontSize: '12px',
-    marginLeft: '4px',
-  };
-
   return (
-    <nav style={{
-      background: 'white',
-      padding: '15px 30px',
-      boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    }}>
-      <div>
-        <Link to="/" style={{ fontWeight: 'bold', fontSize: '20px', textDecoration: 'none', color: '#333' }}>
-          🛍️ Магазин
-        </Link>
-      </div>
-      <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-        <Link to="/" style={{ textDecoration: 'none', color: '#555' }}>Каталог</Link>
-        <Link to="/cart" style={{ textDecoration: 'none', color: '#555' }}>
+    <nav className="navbar">
+      <div className="nav-inner">
+      <Link to="/" className="brand">Beauty</Link>
+      <div className="nav-links">
+        <NavLink to="/" end className="nav-link">Каталог</NavLink>
+        <NavLink to="/cart" className="nav-link">
           Корзина {count > 0 && `(${count})`}
-        </Link>
-        <Link to="/orders" style={{ textDecoration: 'none', color: '#555' }}>Мои заказы</Link>
-        <Link to="/notifications" style={{ textDecoration: 'none', color: '#555' }}>
-          Уведомления {unread > 0 && <span style={badge}>{unread}</span>}
-        </Link>
-        <Link to="/profile" style={{ textDecoration: 'none', color: '#555' }}>Профиль</Link>
-        {isManager && (
-          <Link to="/manage/products" style={{ textDecoration: 'none', color: '#555' }}>Управление</Link>
-        )}
-        {isManager && (
-          <Link to="/manage/orders" style={{ textDecoration: 'none', color: '#555' }}>Заказы</Link>
-        )}
-        <span style={{ color: '#333' }}>👋 {user?.first_name || user?.email}</span>
-        <button
-          onClick={handleLogout}
-          style={{
-            padding: '8px 16px',
-            background: '#f44336',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          Выйти
-        </button>
+        </NavLink>
+        <NavLink to="/orders" className="nav-link">Мои заказы</NavLink>
+        <NavLink to="/notifications" className="nav-link">
+          Уведомления {unread > 0 && <span className="nav-badge">{unread}</span>}
+        </NavLink>
+        <NavLink to="/profile" className="nav-link">Профиль</NavLink>
+        {isManager && <NavLink to="/manage/products" className="nav-link">Управление</NavLink>}
+        {isManager && <NavLink to="/manage/orders" className="nav-link">Заказы</NavLink>}
+        <span className="nav-hello">{user?.first_name || user?.email}</span>
+        <button onClick={handleLogout} className="btn btn-ghost btn-sm">Выйти</button>
+      </div>
       </div>
     </nav>
   );

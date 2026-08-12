@@ -20,18 +20,29 @@ export default function ProfilePage() {
     },
   });
 
-  if (isLoading) return <p style={{ padding: 16 }}>Загрузка профиля…</p>;
-  if (isError) return <p style={{ padding: 16 }}>Не удалось загрузить профиль</p>;
+  if (isLoading) return <p className="state">Загрузка профиля…</p>;
+  if (isError) return <p className="state">Не удалось загрузить профиль</p>;
+
+  const rows: [string, string][] = [
+    ["Email", data?.email || "—"],
+    ["Имя", data?.first_name || "—"],
+    ["Фамилия", data?.last_name || "—"],
+    ["Роль", data?.role || "—"],
+    ["Телефон", data?.phone || "—"],
+    ["Дата регистрации", data?.created_at ? new Date(data.created_at).toLocaleDateString() : "—"],
+  ];
 
   return (
-    <div style={{ padding: 16 }}>
-        <h1>Профиль</h1>
-        <p><b>Email:</b> {data?.email}</p>
-        <p><b>Имя:</b> {data?.first_name || "—"}</p>
-        <p><b>Фамилия:</b> {data?.last_name || "—"}</p>
-        <p><b>Роль:</b> {data?.role}</p>
-        <p><b>Телефон:</b> {data?.phone || "—"}</p>
-        <p><b>Дата регистрации:</b> {data?.created_at ? new Date(data.created_at).toLocaleDateString() : "—"}</p>
+    <div className="page">
+      <h1 className="page-title centered">Профиль</h1>
+      <div className="panel glass" style={{ maxWidth: 520 }}>
+        {rows.map(([label, value]) => (
+          <div key={label} className="row-line">
+            <span className="grow row-sub">{label}</span>
+            <span className="row-title">{value}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

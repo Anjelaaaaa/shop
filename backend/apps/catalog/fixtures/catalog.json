@@ -1,0 +1,495 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Тональные средства"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 3,
+  "fields": {
+    "name": "Губные помады"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 5,
+  "fields": {
+    "name": "Тени для век"
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 6,
+  "fields": {
+    "name": "Уход за лицом"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "name": "Velvet Matte Long Wear Foundation",
+    "description": "Стойкая тональная основа с бархатистым матовым финишем. Держится до 16 часов, не скатывается и не забивает поры, ровно распределяется и надёжно перекрывает несовершенства, сохраняя естественный вид кожи в течение всего дня.",
+    "category": 1,
+    "price": "2190.00",
+    "stock": 45,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/99000107136/web/696d674d61696e5064705f36613462353538613961383234373830386435336230666637303434316333358de6fe60d38a67bfullhd.webp",
+    "created_at": "2026-08-11T06:27:48.747Z",
+    "updated_at": "2026-08-11T06:27:48.747Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "name": "Silky Touch Hydrating Foundation",
+    "description": "Увлажняющая тональная основа с лёгкой шелковистой текстурой и гиалуроновой кислотой. Насыщает кожу влагой, разглаживает и придаёт здоровое сияние. Подходит для сухой и нормальной кожи, создаёт естественное полупрозрачное покрытие.",
+    "category": 1,
+    "price": "1690.00",
+    "stock": 60,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/99000112032/web/696d674d61696e5064705f66343530646535343663393834666363623330383765396131653361396633388ddfaaa85b84580fullhd.webp",
+    "created_at": "2026-08-11T06:27:48.765Z",
+    "updated_at": "2026-08-11T06:27:48.765Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "name": "IRL Soft Matte Foundation",
+    "description": "Тональная основа с эффектом «как в реальной жизни»: мягкий матовый финиш без эффекта маски. Дышащая формула выравнивает тон, скрывает покраснения и держится весь день, оставляя кожу гладкой и ухоженной.",
+    "category": 1,
+    "price": "1290.00",
+    "stock": 55,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000271656/web/696d674d61696e5064708ddc57bfb6e8c9efullhd.webp",
+    "created_at": "2026-08-11T06:27:48.780Z",
+    "updated_at": "2026-08-11T06:27:48.780Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "name": "Luminous Glow Foundation",
+    "description": "Тональная основа с сияющим финишем для эффекта здоровой, отдохнувшей кожи. Светоотражающие частицы мягко рассеивают свет, маскируя тусклость и неровности, а ухаживающие компоненты увлажняют кожу в течение дня.",
+    "category": 1,
+    "price": "2490.00",
+    "stock": 40,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000163531/web/696d674d61696e5064708ddc55f43ae2c70fullhd.webp",
+    "created_at": "2026-08-11T06:27:48.802Z",
+    "updated_at": "2026-08-11T06:27:48.802Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 9,
+  "fields": {
+    "name": "Second Skin Liquid Foundation",
+    "description": "Невесомая жидкая основа с эффектом второй кожи. Тонкое, но плотное покрытие подстраивается под тон лица, скрывает несовершенства и ощущается на коже максимально естественно и комфортно.",
+    "category": 1,
+    "price": "1990.00",
+    "stock": 50,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000156265/web/696d674d61696e5064708ddc53ab67d49ccfullhd.webp",
+    "created_at": "2026-08-11T06:27:48.811Z",
+    "updated_at": "2026-08-11T06:27:48.811Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "name": "Perfect Cover BB Foundation SPF30",
+    "description": "Многофункциональный BB-крем со средней степенью покрытия и защитой SPF30. Выравнивает тон, увлажняет и защищает кожу от солнца, придавая ей ровный и естественный вид без ощущения тяжести.",
+    "category": 1,
+    "price": "990.00",
+    "stock": 70,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000308676/web/696d674d61696e5064708ddc58f27dcc45ffullhd.webp",
+    "created_at": "2026-08-11T06:27:48.824Z",
+    "updated_at": "2026-08-11T06:27:48.824Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "name": "Essence Glow Foundation SPF35",
+    "description": "Тональная эссенция с сияющим финишем и защитой SPF35. Ухаживающая формула с растительными экстрактами увлажняет кожу, придаёт естественное сияние и создаёт лёгкое свежее покрытие на весь день.",
+    "category": 1,
+    "price": "2790.00",
+    "stock": 35,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000386965/web/696d674d61696e5064705f64313062303432656261356134376131396463633933373631623937663635358dede5327149f5dfullhd.webp",
+    "created_at": "2026-08-11T06:27:48.833Z",
+    "updated_at": "2026-08-11T06:27:48.833Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "name": "Camouflage Full Cover Foundation",
+    "description": "Тональная основа с плотным перекрытием для маскировки выраженных несовершенств. Стойкая формула надёжно скрывает покраснения, пигментацию и следы усталости, сохраняя матовый финиш в течение всего дня.",
+    "category": 1,
+    "price": "1450.00",
+    "stock": 48,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000350816/web/696d674d61696e5064705f63366632376330623462626234303064616564373438633733646565393030618de68ba0a6a199cfullhd.webp",
+    "created_at": "2026-08-11T06:27:48.839Z",
+    "updated_at": "2026-08-11T06:27:48.839Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "name": "Velvet Skin Foundation",
+    "description": "Роскошная тональная основа с бархатным финишем и ухаживающим составом. Обеспечивает ровное сияющее покрытие, разглаживает текстуру кожи и дарит ощущение комфорта, подчёркивая естественную красоту лица.",
+    "category": 1,
+    "price": "3290.00",
+    "stock": 30,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000105827/web/696d674d61696e5064708ddc536732f04c5fullhd.webp",
+    "created_at": "2026-08-11T06:27:48.849Z",
+    "updated_at": "2026-08-11T06:27:48.849Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 14,
+  "fields": {
+    "name": "Cream Lip Polish",
+    "description": "Кремовая жидкая помада с глянцевым финишем и ухаживающей текстурой. Мягко обволакивает губы насыщенным цветом, не сушит и дарит комфорт на несколько часов, придавая губам ухоженный сияющий вид.",
+    "category": 3,
+    "price": "490.00",
+    "stock": 60,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000498976/web/696d674d61696e5064705f66353831383734376433313534386335393764323538393031656431376134348de94abace7ea1afullhd.webp",
+    "created_at": "2026-08-11T06:30:46.722Z",
+    "updated_at": "2026-08-11T06:30:46.722Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 15,
+  "fields": {
+    "name": "Marble Satin Lipstick",
+    "description": "Атласная помада в изящном мраморном корпусе. Насыщенный пигмент ложится ровным слоем, придаёт губам мягкое сияние и увлажняет благодаря ухаживающим маслам в составе.",
+    "category": 3,
+    "price": "1290.00",
+    "stock": 40,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000307337/web/696d674d61696e5064708ddc58dac99b192fullhd.webp",
+    "created_at": "2026-08-11T06:30:46.737Z",
+    "updated_at": "2026-08-11T06:30:46.737Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 16,
+  "fields": {
+    "name": "Full Color Matte Lipstick",
+    "description": "Матовая помада с плотным насыщенным покрытием. Один слой дарит яркий стойкий цвет без эффекта пересушивания, а бархатистая текстура комфортно ощущается на губах.",
+    "category": 3,
+    "price": "890.00",
+    "stock": 50,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000485166/web/696d674d61696e5064705f63316430623434363532643534356264616263636462313163376138656562338de73ac1f97bb1dfullhd.webp",
+    "created_at": "2026-08-11T06:30:46.745Z",
+    "updated_at": "2026-08-11T06:30:46.745Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 17,
+  "fields": {
+    "name": "Soft Matte Liquid Lipstick",
+    "description": "Жидкая матовая помада с мягким бархатистым финишем. Лёгкая формула быстро фиксируется, не растекается и держится в течение дня, оставляя губы ухоженными.",
+    "category": 3,
+    "price": "750.00",
+    "stock": 55,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000437928/web/696d674d61696e5064705f33663035316266383363643334386534383933313730616432343238346337618dddf2ed5b8b371fullhd.webp",
+    "created_at": "2026-08-11T06:30:46.750Z",
+    "updated_at": "2026-08-11T06:30:46.750Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 18,
+  "fields": {
+    "name": "Heart Tinted Lip Balm",
+    "description": "Оттеночный бальзам для губ с милым сердечком на стике. Питает и увлажняет губы, придавая им нежный естественный оттенок и здоровое сияние. Идеален для повседневного лёгкого макияжа.",
+    "category": 3,
+    "price": "420.00",
+    "stock": 70,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/99000054036/web/696d674d61696e5064705f62656331663064313333396234663939626435653462653361366366613830628dea9fadc1e977ffullhd.webp",
+    "created_at": "2026-08-11T06:30:46.757Z",
+    "updated_at": "2026-08-11T06:30:46.757Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 19,
+  "fields": {
+    "name": "Rose Nude Lipstick",
+    "description": "Нюдовая помада с кремовой текстурой в пастельном корпусе. Мягкий розово-бежевый оттенок подходит на каждый день, увлажняет губы и создаёт естественный ухоженный вид.",
+    "category": 3,
+    "price": "650.00",
+    "stock": 45,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000259316/web/696d674d61696e5064708ddc5776cfb9171fullhd.webp",
+    "created_at": "2026-08-11T06:30:46.762Z",
+    "updated_at": "2026-08-11T06:30:46.762Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 20,
+  "fields": {
+    "name": "Lip Divine Liquid Matte",
+    "description": "Насыщенная жидкая матовая помада глубокого винного оттенка. Высокая пигментация и стойкая формула обеспечивают яркий цвет на весь день без необходимости обновления.",
+    "category": 3,
+    "price": "990.00",
+    "stock": 35,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000485162/web/696d674d61696e5064705f36323261663433303662653834653335383061336364626532373363643366648de73ac2103de33fullhd.webp",
+    "created_at": "2026-08-11T06:30:46.771Z",
+    "updated_at": "2026-08-11T06:30:46.771Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 21,
+  "fields": {
+    "name": "Studio Glow Lip Balm",
+    "description": "Ухаживающий бальзам-помада с лёгким сияющим финишем. Увлажняет и разглаживает губы, придавая им нежный розовый оттенок и естественный блеск.",
+    "category": 3,
+    "price": "560.00",
+    "stock": 60,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000123980/web/696d674d61696e5064708ddc51dbf34d36efullhd.webp",
+    "created_at": "2026-08-11T06:30:46.776Z",
+    "updated_at": "2026-08-11T06:30:46.776Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 22,
+  "fields": {
+    "name": "Velvet Red Lipstick",
+    "description": "Классическая красная помада с бархатным матовым финишем. Насыщенный алый цвет и стойкая формула делают её идеальным выбором для яркого выразительного макияжа губ.",
+    "category": 3,
+    "price": "1190.00",
+    "stock": 40,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000499027/web/696d674d61696e5064705f66383065613039396261336534383237623366666366623363336231366538658de94ac265b438ffullhd.webp",
+    "created_at": "2026-08-11T06:30:46.791Z",
+    "updated_at": "2026-08-11T06:30:46.791Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 23,
+  "fields": {
+    "name": "Nude Classic Lipstick",
+    "description": "Универсальная нюдовая помада тёплого оттенка. Кремовая текстура комфортно ложится на губы, обеспечивает ровное покрытие и подходит для естественного макияжа в любой ситуации.",
+    "category": 3,
+    "price": "590.00",
+    "stock": 50,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000349080/web/696d674d61696e5064708ddc5ac0419817ffullhd.webp",
+    "created_at": "2026-08-11T06:30:46.796Z",
+    "updated_at": "2026-08-11T06:30:46.796Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 25,
+  "fields": {
+    "name": "Strong Long Lasting Foundation",
+    "description": "Стойкая тональная основа с плотным покрытием и матовым финишем. Надёжно перекрывает несовершенства, выравнивает тон и держится в течение всего дня, сохраняя кожу ухоженной и без жирного блеска.",
+    "category": 1,
+    "price": "840.00",
+    "stock": 50,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000485432/web/696d674d61696e5064705f65366438303632656532363534336337386536363231376131623532356236668de6ee18155fd66fullhd.webp",
+    "created_at": "2026-08-11T06:52:20.452Z",
+    "updated_at": "2026-08-11T09:05:31.374Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 26,
+  "fields": {
+    "name": "Nude Eyeshadow Palette",
+    "description": "Палетка теней в универсальных нюдовых оттенках для повседневного макияжа. Мягко растушёвывается, ложится ровным слоем и держится в течение дня, позволяя создавать как естественные, так и более выразительные образы.",
+    "category": 5,
+    "price": "1490.00",
+    "stock": 40,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000105823/web/696d674d61696e5064708ddc5366f6914c5fullhd.webp",
+    "created_at": "2026-08-11T06:59:05.428Z",
+    "updated_at": "2026-08-11T06:59:05.428Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 27,
+  "fields": {
+    "name": "Shimmer Glow Eyeshadow",
+    "description": "Сияющие тени с эффектом деликатного мерцания. Насыщенные светоотражающие частицы придают взгляду сияние и глубину, легко наносятся пальцем или кистью и не осыпаются.",
+    "category": 5,
+    "price": "690.00",
+    "stock": 55,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000511013/web/696d674d61696e5064705f33623265323932616131356334636136393866646330613432383036323161668dea68f1209a054fullhd.webp",
+    "created_at": "2026-08-11T06:59:05.438Z",
+    "updated_at": "2026-08-11T06:59:05.438Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 28,
+  "fields": {
+    "name": "Matte Eyeshadow Palette",
+    "description": "Матовая палетка теней с бархатистой текстурой. Пигментированные оттенки идеально подходят для дневного макияжа и растушёвки, создавая мягкие естественные переходы.",
+    "category": 5,
+    "price": "1290.00",
+    "stock": 45,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000439164/web/696d674d61696e5064705f62333134663739343566396534636165613633643066633137343831663735648de54196f5ba253fullhd.webp",
+    "created_at": "2026-08-11T06:59:05.447Z",
+    "updated_at": "2026-08-11T06:59:05.448Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 29,
+  "fields": {
+    "name": "Smoky Eyeshadow Palette",
+    "description": "Палетка для создания эффектного смоки-макияжа. Тёмные и мерцающие оттенки хорошо смешиваются между собой и держатся весь вечер, придавая взгляду выразительность и глубину.",
+    "category": 5,
+    "price": "1590.00",
+    "stock": 34,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/19000497082/web/696d674d61696e5064705f63633736306135393932343534326261393132383433653139666535333162348de88a1c37e2339fullhd.webp",
+    "created_at": "2026-08-11T06:59:05.454Z",
+    "updated_at": "2026-08-11T11:26:27.214Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 30,
+  "fields": {
+    "name": "Diamond Glitter Eyeshadow",
+    "description": "Тени с крупным сверкающим глиттером для праздничного макияжа. Дарят яркие акценты и переливающееся сияние, легко наносятся и надёжно фиксируются на веке.",
+    "category": 5,
+    "price": "590.00",
+    "stock": 60,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000284120/web/696d674d61696e5064708ddc57ed5cbcafefullhd.webp",
+    "created_at": "2026-08-11T06:59:05.464Z",
+    "updated_at": "2026-08-11T06:59:05.464Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 31,
+  "fields": {
+    "name": "Hydra Boost Face Cream",
+    "description": "Увлажняющий крем для лица с лёгкой текстурой. Насыщает кожу влагой, разглаживает и придаёт свежий отдохнувший вид. Быстро впитывается и подходит для ежедневного ухода за нормальной и комбинированной кожей.",
+    "category": 6,
+    "price": "1290.00",
+    "stock": 50,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000142093/web/696d67416464335064705f66336437373665316132656234653861623632343863363430333033303565658ddfcc78a26b584fullhd.webp",
+    "created_at": "2026-08-11T07:01:09.516Z",
+    "updated_at": "2026-08-11T07:01:09.516Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 32,
+  "fields": {
+    "name": "Night Repair Cream",
+    "description": "Ночной восстанавливающий крем для интенсивного ухода. Работает во время сна: питает, восстанавливает и повышает упругость кожи, чтобы утром лицо выглядело свежим и сияющим.",
+    "category": 6,
+    "price": "1690.00",
+    "stock": 40,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000058823/web/696d674d61696e5064708ddc4cba6f195c7fullhd.webp",
+    "created_at": "2026-08-11T07:01:09.532Z",
+    "updated_at": "2026-08-11T07:01:09.532Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 33,
+  "fields": {
+    "name": "Daily Defense Cream SPF30",
+    "description": "Дневной крем с защитой SPF30. Увлажняет кожу и защищает её от ультрафиолета и негативного воздействия окружающей среды, создавая комфортную базу под макияж.",
+    "category": 6,
+    "price": "1490.00",
+    "stock": 45,
+    "is_published": true,
+    "image_url": "https://ccdn.goldapple.ru/p/p/9410100008/web/696d674d61696e5064708ddc43746750340fullhd.webp",
+    "created_at": "2026-08-11T07:01:09.538Z",
+    "updated_at": "2026-08-11T07:01:09.538Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 34,
+  "fields": {
+    "name": "Hyaluronic Moisture Cream",
+    "description": "Крем с гиалуроновой кислотой для глубокого увлажнения. Восполняет запас влаги, разглаживает мелкие морщинки и возвращает коже эластичность и мягкость.",
+    "category": 6,
+    "price": "1390.00",
+    "stock": 54,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000003112/web/696d674d61696e5064708ddc47d13c8325cfullhd.webp",
+    "created_at": "2026-08-11T07:01:09.548Z",
+    "updated_at": "2026-08-11T11:26:27.213Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 35,
+  "fields": {
+    "name": "Nourishing Rich Cream",
+    "description": "Питательный насыщенный крем для сухой и чувствительной кожи. Восстанавливает защитный барьер, смягчает и устраняет ощущение стянутости, даря коже комфорт в холодное время года.",
+    "category": 6,
+    "price": "1590.00",
+    "stock": 33,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000107934/web/696d674d61696e5064708ddc513c4138321fullhd.webp",
+    "created_at": "2026-08-11T07:01:09.555Z",
+    "updated_at": "2026-08-11T11:26:27.211Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 36,
+  "fields": {
+    "name": "Mattifying Gel-Cream",
+    "description": "Матирующий крем-гель для жирной и комбинированной кожи. Контролирует выработку себума, сужает поры и придаёт коже матовый ухоженный вид без ощущения плёнки.",
+    "category": 6,
+    "price": "1190.00",
+    "stock": 50,
+    "is_published": true,
+    "image_url": "https://pcdn.goldapple.ru/p/p/19000334967/web/696d674d61696e5064708ddc5a45d231e28fullhd.webp",
+    "created_at": "2026-08-11T07:01:09.561Z",
+    "updated_at": "2026-08-11T07:01:09.561Z"
+  }
+}
+]

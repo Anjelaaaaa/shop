@@ -17,8 +17,6 @@ interface Order {
   items: OrderItem[];
 }
 
-const cell: React.CSSProperties = { border: "1px solid #ddd", padding: 8, textAlign: "left" };
-
 export default function OrderDetailPage() {
   const { id } = useParams();
   const qc = useQueryClient();
@@ -43,52 +41,59 @@ export default function OrderDetailPage() {
     onSuccess: invalidate,
   });
 
-  if (isLoading) return <p style={{ padding: 16 }}>Загрузка…</p>;
-  if (isError || !data) return <p style={{ padding: 16 }}>Заказ не найден</p>;
+  if (isLoading) return <p className="state">Загрузка…</p>;
+  if (isError || !data) return <p className="state">Заказ не найден</p>;
 
   return (
-    <div style={{ padding: 16, maxWidth: 700 }}>
-      <Link to="/orders">← К моим заказам</Link>
-      <h1>Заказ #{data.id}</h1>
-      <p>
-        Статус: <b>{STATUS_LABELS[data.status] || data.status}</b>
-      </p>
-      <p style={{ color: "#888" }}>{new Date(data.created_at).toLocaleString()}</p>
+    <div className="page" style={{ maxWidth: 760 }}>
+      <Link to="/orders" className="back-link">← К моим заказам</Link>
 
-      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 12 }}>
-        <thead>
-          <tr>
-            <th style={cell}>Товар</th>
-            <th style={cell}>Цена</th>
-            <th style={cell}>Кол-во</th>
-            <th style={cell}>Сумма</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.items.map((i) => (
-            <tr key={i.id}>
-              <td style={cell}>{i.product_name}</td>
-              <td style={cell}>{i.price} ₽</td>
-              <td style={cell}>{i.quantity}</td>
-              <td style={cell}>{(Number(i.price) * i.quantity).toFixed(2)} ₽</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="panel glass">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <div>
+            <h1 style={{ fontFamily: "var(--font-head)", fontSize: 28, fontWeight: 700, letterSpacing: "-0.5px" }}>Заказ #{data.id}</h1>
+            <div className="row-sub">{new Date(data.created_at).toLocaleString()}</div>
+          </div>
+          <span className="status-pill">{STATUS_LABELS[data.status] || data.status}</span>
+        </div>
 
-      <h2 style={{ marginTop: 16 }}>Итого: {data.total} ₽</h2>
+        <div className="table-wrap" style={{ marginTop: 16 }}>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Товар</th>
+                <th>Цена</th>
+                <th>Кол-во</th>
+                <th>Сумма</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.items.map((i) => (
+                <tr key={i.id}>
+                  <td>{i.product_name}</td>
+                  <td>{i.price} ₽</td>
+                  <td>{i.quantity}</td>
+                  <td>{(Number(i.price) * i.quantity).toFixed(2)} ₽</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-      <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-        {data.status === "NEW" && (
-          <button onClick={() => pay.mutate()} disabled={pay.isPending}>
-            Оплатить
-          </button>
-        )}
-        {(data.status === "NEW" || data.status === "PAID") && (
-          <button onClick={() => cancel.mutate()} disabled={cancel.isPending}>
-            Отменить заказ
-          </button>
-        )}
+        <div className="total-line">Итого: {data.total} ₽</div>
+
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          {data.status === "NEW" && (
+            <button className="btn btn-primary" onClick={() => pay.mutate()} disabled={pay.isPending}>
+              Оплатить
+            </button>
+          )}
+          {(data.status === "NEW" || data.status === "PAID") && (
+            <button className="btn btn-ghost" onClick={() => cancel.mutate()} disabled={cancel.isPending}>
+              Отменить заказ
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

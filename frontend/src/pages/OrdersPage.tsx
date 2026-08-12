@@ -31,35 +31,31 @@ export default function OrdersPage() {
     queryFn: async () => (await api.get("/orders/")).data,
   });
 
-  if (isLoading) return <p style={{ padding: 16 }}>Загрузка…</p>;
-  if (isError) return <p style={{ padding: 16 }}>Ошибка загрузки заказов</p>;
+  if (isLoading) return <p className="state">Загрузка…</p>;
+  if (isError) return <p className="state">Ошибка загрузки заказов</p>;
   if (!data || data.length === 0)
     return (
-      <p style={{ padding: 16 }}>
-        У вас пока нет заказов. <Link to="/">В каталог</Link>
-      </p>
+      <div className="page">
+        <h1 className="page-title">Мои заказы</h1>
+        <p className="state">
+          У вас пока нет заказов. <Link to="/" className="link-accent">В каталог</Link>
+        </p>
+      </div>
     );
 
   return (
-    <div style={{ padding: 16, maxWidth: 700 }}>
-      <h1>Мои заказы</h1>
+    <div className="page">
+      <h1 className="page-title">Мои заказы</h1>
       {data.map((o) => (
-        <Link
-          key={o.id}
-          to={`/orders/${o.id}`}
-          style={{
-            display: "block",
-            border: "1px solid #ddd",
-            borderRadius: 8,
-            padding: 12,
-            marginBottom: 8,
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          <b>Заказ #{o.id}</b> — {STATUS_LABELS[o.status] || o.status}
-          <div style={{ color: "#888" }}>{new Date(o.created_at).toLocaleString()}</div>
-          <div>Сумма: {o.total} ₽</div>
+        <Link key={o.id} to={`/orders/${o.id}`} className="tile glass">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+            <div>
+              <div className="row-title">Заказ #{o.id}</div>
+              <div className="row-sub">{new Date(o.created_at).toLocaleString()}</div>
+            </div>
+            <span className="status-pill">{STATUS_LABELS[o.status] || o.status}</span>
+          </div>
+          <div className="card-price" style={{ fontSize: 18, marginTop: 8 }}>{o.total} ₽</div>
         </Link>
       ))}
     </div>
