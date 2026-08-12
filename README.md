@@ -56,6 +56,44 @@ shop/
 docker compose exec backend python manage.py test apps.users.tests apps.catalog.tests apps.orders.tests
 ```
 
+Результат: `Ran 8 tests ... OK` — покрыты регистрация, вход, права на товары,
+создание заказа, запрет заказа сверх остатка, списание и возврат остатка,
+доступ к чужому заказу.
+
+## Скриншоты
+
+### Аутентификация
+| Регистрация | Вход |
+|---|---|
+| ![Регистрация](screenshots/register.png) | ![Вход](screenshots/login.png) |
+
+### Покупатель
+| Каталог | Страница товара |
+|---|---|
+| ![Каталог](screenshots/catalog.png) | ![Товар](screenshots/product.png) |
+
+| Корзина | Оформленные заказы |
+|---|---|
+| ![Корзина](screenshots/cart.png) | ![Мои заказы](screenshots/orders.png) |
+
+| Детали заказа | Профиль |
+|---|---|
+| ![Детали заказа](screenshots/order-detail.png) | ![Профиль](screenshots/profile.png) |
+
+| Уведомления | |
+|---|---|
+| ![Уведомления](screenshots/notifications.png) | |
+
+### Менеджер
+| Управление товарами | Форма товара |
+|---|---|
+| ![Управление товарами](screenshots/manage-products.png) | ![Форма товара](screenshots/product-form.png) |
+
+| Управление заказами | |
+|---|---|
+| ![Управление заказами](screenshots/manage-orders.png) | |
+
+
 ## Реализованная функциональность
 
 - Регистрация, вход по JWT, профиль пользователя.
