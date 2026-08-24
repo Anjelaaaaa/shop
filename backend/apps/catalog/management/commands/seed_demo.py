@@ -18,12 +18,12 @@ class Command(BaseCommand):
                 continue
             if is_super:
                 User.objects.create_superuser(
-                    email=email, password="12345", first_name=first_name
+                    email=email, password="cjif34f8y57gjtn", first_name=first_name
                 )
             else:
                 User.objects.create_user(
                     email=email,
-                    password="12345",
+                    password="cjif34f8y57gjtn",
                     role=role,
                     first_name=first_name,
                     last_name=last_name,

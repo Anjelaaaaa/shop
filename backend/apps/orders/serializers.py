@@ -42,7 +42,7 @@ class OrderCreateSerializer(serializers.Serializer):
             order = Order.objects.create(user=user)
             for item in items_data:
                 try:
-                    product = Product.objects.select_for_update().get(pk=item["product"])
+                    product = Product.objects.select_for_update().get(pk=item["product"], is_published=True)
                 except Product.DoesNotExist:
                     raise serializers.ValidationError(
                         f"Товар с id={item['product']} не найден."

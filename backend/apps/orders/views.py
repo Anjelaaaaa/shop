@@ -4,6 +4,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from .models import Order
+from apps.catalog.models import Product
 from .serializers import OrderSerializer, OrderCreateSerializer
 
 
@@ -57,10 +58,11 @@ class OrderViewSet(
                 status=status.HTTP_400_BAD_REQUEST,
             )
         with transaction.atomic():
-            for item in order.items.select_related("product"):
-                if item.product:
-                    item.product.stock += item.quantity
-                    item.product.save()
+            for item in order.items.all():
+                if item.product_id:
+                    product = Product.objects.select_for_update().get(pk=item.product_id)
+                    product.stock += item.quantity
+                    product.save()
             order.status = Order.Status.CANCELLED
             order.save()
         return Response(self._serialized(order))

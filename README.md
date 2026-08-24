@@ -46,9 +46,9 @@ shop/
 
 | Email | Пароль | Роль |
 |---|---|---|
-| admin@shop.com | 12345 | ADMIN |
-| manager@shop.com | 12345 | MANAGER |
-| anjik14.01@gmail.com | 12345 | USER |
+| admin@shop.com | cjif34f8y57gjtn | ADMIN |
+| manager@shop.com | cjif34f8y57gjtn | MANAGER |
+| anjik14.01@gmail.com | cjif34f8y57gjtn | USER |
 
 ## Тесты
 

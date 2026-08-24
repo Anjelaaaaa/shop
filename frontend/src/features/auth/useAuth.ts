@@ -31,7 +31,11 @@ export function useAuth() {
       navigate('/');
       return userResponse.data;
     } catch (err: any) {
-      setError(err.response?.data?.detail || 'Ошибка входа');
+      if (err.response?.status === 401) {
+        setError('Неверный email или пароль');
+      } else {
+        setError('Не удалось войти. Попробуйте позже.');
+      }
       throw err;
     } finally {
       setLoading(false);
