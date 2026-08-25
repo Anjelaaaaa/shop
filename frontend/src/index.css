@@ -148,7 +148,8 @@ input, select, textarea, button { font-family: inherit; }
 .field:focus { border-color: var(--accent-2); }
 .field:hover { border-color: rgba(23, 18, 31, 0.2); }
 .field-search { flex: 1; min-width: 240px; }
-
+.stock-filter { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); font-weight: 600; cursor: pointer; }
+.stock-filter input { width: auto; cursor: pointer; }
 .dd { position: relative; }
 .dd-trigger {
   display: flex;

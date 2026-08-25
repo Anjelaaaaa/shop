@@ -23,6 +23,9 @@ export default function HomePage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [ordering, setOrdering] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [inStock, setInStock] = useState(false);
 
   const { data: categories } = useQuery<Category[]>({
     queryKey: ["categories"],
@@ -30,12 +33,15 @@ export default function HomePage() {
   });
 
   const { data, isLoading, isError } = useQuery<Product[]>({
-    queryKey: ["products", search, category, ordering],
+    queryKey: ["products", search, category, ordering, minPrice, maxPrice, inStock],
     queryFn: async () => {
       const params: Record<string, string> = {};
       if (search) params.search = search;
       if (category) params.category = category;
       if (ordering) params.ordering = ordering;
+      if (minPrice) params.min_price = minPrice;
+      if (maxPrice) params.max_price = maxPrice;
+      if (inStock) params.in_stock = "true";
       const res = await api.get("/products/", { params });
       return res.data;
     },
@@ -53,6 +59,32 @@ export default function HomePage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <input
+          className="field"
+          type="number"
+          min="0"
+          placeholder="Цена от"
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+          style={{ width: 110 }}
+        />
+        <input
+          className="field"
+          type="number"
+          min="0"
+          placeholder="Цена до"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(e.target.value)}
+          style={{ width: 110 }}
+        />
+        <label className="stock-filter">
+          <input
+            type="checkbox"
+            checked={inStock}
+            onChange={(e) => setInStock(e.target.checked)}
+          />
+          Только в наличии
+        </label>
         <Dropdown
           value={category}
           onChange={setCategory}
